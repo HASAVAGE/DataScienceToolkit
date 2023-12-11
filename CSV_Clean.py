@@ -1,5 +1,5 @@
 import pandas as pd 
-from sklearn import LabelEncoder 
+from sklearn import preprocessing
 import numpy as np 
   
 def drop_duplicates(df, subset_name): 
@@ -7,7 +7,7 @@ def drop_duplicates(df, subset_name):
     return df 
   
 def encode(df, column_to_encode): 
-    le = LabelEncoder() 
+    le = preprocessing.LabelEncoder()
     # fit and transform a column using the LabelEncoder 
     df[column_to_encode] = le.fit_transform(df[column_to_encode]) 
     return df 
